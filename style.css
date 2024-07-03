@@ -1,0 +1,423 @@
+/* Importing advanced Google Fonts for a unique typography */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+/* Custom properties for an otherworldly color scheme */
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --accent-color: #ffff00;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --neon-shadow: 0 0 7px var(--primary-color),
+                 0 0 10px var(--primary-color),
+                 0 0 21px var(--primary-color),
+                 0 0 42px var(--secondary-color),
+                 0 0 82px var(--secondary-color),
+                 0 0 92px var(--secondary-color),
+                 0 0 102px var(--secondary-color),
+                 0 0 151px var(--secondary-color);
+}
+
+/* Advanced reset for cross-browser consistency */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for modern browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 100% 100%, rgba(255, 0, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 0% 0%, rgba(0, 255, 255, 0.2) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Futuristic Header Styles */
+header {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 51, 0.8));
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: neonText 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonText {
+  from {
+    text-shadow: var(--neon-shadow);
+  }
+  to {
+    text-shadow: none;
+  }
+}
+
+/* Animated Background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.animated-bg::before,
+.animated-bg::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200vmax;
+  height: 200vmax;
+  border-radius: 50%;
+  background: transparent;
+  animation: rotate 30s linear infinite;
+}
+
+.animated-bg::before {
+  border: 2px solid var(--primary-color);
+  animation-duration: 40s;
+}
+
+.animated-bg::after {
+  border: 2px solid var(--secondary-color);
+  animation-duration: 50s;
+  animation-direction: reverse;
+}
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Main Content Styles */
+main {
+  max-width: 1200px;
+  margin: 8rem auto 2rem;
+  padding: 2rem;
+  background: rgba(0, 0, 51, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+main h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+  position: relative;
+  text-shadow: var(--neon-shadow);
+}
+
+main h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  margin: 15px auto 0;
+  box-shadow: var(--neon-shadow);
+}
+
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Futuristic Button Styles */
+#download-button {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Section Styles with Holographic Effect */
+.section {
+  background: rgba(0, 0, 51, 0.7);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(255, 0, 255, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 4rem auto;
+  max-width: 1000px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  text-align: center;
+  position: relative;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.section h3::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  margin: 15px auto 0;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Advanced Image Styles */
+.section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: saturate(0.8) contrast(1.2);
+}
+
+.section img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.5);
+  filter: saturate(1.2) contrast(1.4);
+}
+
+/* FAQ Section Enhancements */
+.faq strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.faq p {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.faq p::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.faq a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.faq a:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Footer with Cyberpunk Flair */
+footer {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 51, 0.8));
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 255, 255, 0.1) 10px,
+    rgba(0, 255, 255, 0.1) 20px
+  );
+  animation: moveStripes 20s linear infinite;
+}
+
+@keyframes moveStripes {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design with Advanced Techniques */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main, .section {
+    padding: 2rem;
+    margin-top: 6rem;
+  }
+
+  main h2, .section h3 {
+    font-size: 2rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  /* Stacked Card Effect for Mobile */
+  .section {
+    margin-top: -50px;
+    padding-top: 70px;
+  }
+
+  .section:first-of-type {
+    margin-top: 4rem;
+  }
+}
+
+/* Advanced Scroll Reveal Effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Particle Effect (Requires JavaScript) */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--secondary-color), var(--accent-color));
+}
+
+/* Text Selection Style */
+::selection {
+  background: var(--accent-color);
+  color: var(--background-color);
+}
